@@ -10,6 +10,10 @@
 
 - Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces/akhaliq/yolov7) using Gradio. Try out the Web Demo [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/akhaliq/yolov7)
 
+```bash
+python detect_or_track.py --weights yolov7.pt --no-trace --view-img --source street.mp4 --show-fps --seed 2 --track --show-track --project detects --name test
+```
+
 ## Performance 
 
 MS COCO
