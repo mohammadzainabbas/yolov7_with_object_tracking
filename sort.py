@@ -104,9 +104,10 @@ class KalmanBoxTracker(object):
         CY = (bbox[1]+bbox[3])//2
         self.centroidarr.append((CX,CY))
         
-        
-        #keep yolov5 detected class information
+        #keep yolov7 detected class information
         self.detclass = bbox[5]
+        #keep yolov7 confidence score
+        self.confidence = bbox[4]
         
     def update(self, bbox):
         """
@@ -118,6 +119,7 @@ class KalmanBoxTracker(object):
         self.hit_streak += 1
         self.kf.update(convert_bbox_to_z(bbox))
         self.detclass = bbox[5]
+        self.confidence = bbox[4]
         CX = (bbox[0]+bbox[2])//2
         CY = (bbox[1]+bbox[3])//2
         self.centroidarr.append((CX,CY))
